@@ -1,19 +1,21 @@
 <script>
+	import { email, password } from '/src/routes/api/data';
 	import { getAuthToken } from '/src/routes/api/auth';
+	import { getEmployees } from '/src/routes/api/employees';
 	// import welcome from '$lib/images/svelte-welcome.webp';
 
 	let employeeCount = 50;
 
-	const email = 'sergey-api@doinstruct.de';
-	const password = 'S39EAu$TmM4$kr%DKk^&^zkpmfYRdfPHj%C5y89^V33VaU2uzP5oKe!LeKHyzvxZ';
 	let authToken = '';
 
 	async function handleLogin() {
     authToken = await getAuthToken(email, password);
+		console.log('typef authToken: ', typeof authToken);
   }
 
   async function createEmployees() {
-    // await fetchProtectedData(authToken);
+    const res = await getEmployees(authToken);
+		console.log('res: ', res);
   }
 </script>
 

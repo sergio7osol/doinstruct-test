@@ -1,3 +1,5 @@
+import { xApiKey } from './data';
+
 export async function getEmployees() {
 	const token = localStorage.getItem('token');
 	if (!token) {
@@ -6,10 +8,10 @@ export async function getEmployees() {
 	}
 
 	try {
-		const response = await fetch('https://cms-api.doinstruct.com/employees?limit=5&offset=0', {
+		const response = await fetch('/api/employees?limit=5&offset=0', {
 			headers: {
 				'Authorization': token,
-				'x-api-key': '0cQxbnE-oweEwHQEs0zlIiAcDYiYMybtCE8Q71h3JsY' 
+				'x-api-key': xApiKey
 			}
 		});
 

@@ -1,10 +1,12 @@
-export async function getAuthToken(email, password) {
+import { xApiKey, email, password } from './authData';
+
+export async function getAuthToken() {
 	try {
 		const response = await fetch('/api/auth/sign-in', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-        'x-api-key': '0cQxbnE-oweEwHQEs0zlIiAcDYiYMybtCE8Q71h3JsY'
+        'x-api-key': xApiKey
 			},
 			body: JSON.stringify({ email, password })
 		});
