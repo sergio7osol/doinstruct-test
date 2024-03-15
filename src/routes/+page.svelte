@@ -1,10 +1,10 @@
 <script>
-	import { email, password } from '/src/routes/api/data';
+	import { email, password } from '/src/routes/api/authData';
 	import { getAuthToken } from '/src/routes/api/auth';
 	import { getEmployees } from '/src/routes/api/employees';
 	// import welcome from '$lib/images/svelte-welcome.webp';
 
-	let employeeCount = 50;
+	let employeeCount = 350;
 
 	let authToken = '';
 

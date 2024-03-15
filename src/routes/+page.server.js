@@ -1,6 +1,6 @@
 import express from 'express';
 import { fetch, error } from '@sveltejs/kit';
-import { posts } from '/src/routes/api/data';
+import { posts } from '/src/routes/api/authData';
 
 const router = express.Router();
 
