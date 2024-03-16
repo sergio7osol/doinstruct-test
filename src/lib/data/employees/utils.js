@@ -1,35 +1,38 @@
-import { employeeExamples } from '.data';
+import { employeeExamples } from './data';
 
 function generateRandomDate() {
-  const currentYear = new Date().getFullYear();
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
   const minYear = 1990;
-  const year = Math.floor(Math.random() * (currentYear - minYear + 1)) + minYear;
-  const month = String(Math.floor(Math.random() * 12) + 1).padStart(2, '0');
-  const day = String(Math.floor(Math.random() * 31) + 1).padStart(2, '0'); 
+  const year = Math.floor(Math.random() * (currentYear - minYear + 1)) + (currentYear - (currentYear - minYear));
+  const maxMonth = currentDate.getMonth() + 1; // Get current month (0-indexed)
+  const month = String(Math.floor(Math.random() * maxMonth) + 1).padStart(2, '0');
+  const maxDay = currentDate.getDate(); // Get current day of the month
+  const day = String(Math.floor(Math.random() * maxDay) + 1).padStart(2, '0');
 
   return `${year}-${month}-${day}`;
 }
 
-function generateRandomEmployee() {
+export function generateRandomEmployee() {
   const { firstName, lastName, language, shirtSize, shoeSize } = employeeExamples;
 
   return {
-    active: Math.random() < 0.5, 
-    custom1: null,
-    custom2: null,
-    custom3: null,
-    employeeKey: null,
-    firstDay: generateRandomDate(),
-    firstName: firstName[Math.floor(Math.random() * firstName.length)],
-    lastName: lastName[Math.floor(Math.random() * lastName.length)],
-    language: language[Math.floor(Math.random() * language.length)],
-    personalData: {
-      shirt: shirtSize[Math.floor(Math.random() * shirtSize.length)],
-      shoes: shoeSize[Math.floor(Math.random() * shoeSize.length)]
+    "active": Math.random() < 0.5, 
+    "custom1": null,
+    "custom2": null,
+    "custom3": null,
+    "employeeKey": null,
+    "firstDay": generateRandomDate(),
+    "firstName": firstName[Math.floor(Math.random() * firstName.length)],
+    "lastName": lastName[Math.floor(Math.random() * lastName.length)],
+    "language": language[Math.floor(Math.random() * language.length)],
+    "personalData": {
+      "shirt": shirtSize[Math.floor(Math.random() * shirtSize.length)],
+      "shoes": shoeSize[Math.floor(Math.random() * shoeSize.length)]
     },
-    phone: null,
-    privacyConfirmed: Math.random() < 0.5, 
-    thirdFactor: null
+    "phone": null,
+    "privacyConfirmed": Math.random() < 0.5, 
+    "thirdFactor": null 
   };
 }
 
@@ -42,3 +45,4 @@ export function generateRandomEmployees(count) {
 
   return employees;
 }
+

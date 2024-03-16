@@ -1,7 +1,7 @@
 <script>
 	import { email, password } from '/src/routes/api/authData';
 	import { getAuthToken } from '/src/routes/api/auth';
-	import { getEmployees } from '/src/routes/api/employees';
+	import { getEmployeesData } from '/src/routes/api/employees';
 	// import welcome from '$lib/images/svelte-welcome.webp';
 
 	let employeeCount = 350;
@@ -14,7 +14,7 @@
   }
 
   async function createEmployees() {
-    const res = await getEmployees(authToken);
+    const res = await getEmployeesData(authToken);
 		console.log('res: ', res);
   }
 </script>

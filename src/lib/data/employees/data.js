@@ -1,7 +1,7 @@
 export const employeeExamples = {
-  firstName: ['John', 'Alice', 'Bob', 'Emma', 'Michael', 'Sophia', 'William', 'Olivia', 'James', 'Emily', 'Daniel', 'Isabella', 'Liam', 'Charlotte', 'Benjamin'],
-  lastName: ['Doe', 'Smith', 'Johnson', 'Brown', 'Taylor', 'Anderson', 'Wilson', 'Martinez', 'Clark', 'Rodriguez', 'Lewis', 'Lee', 'Walker', 'Hall', 'Young'],
-  language: ['en', 'de', 'fr', 'es', 'it', 'pl', 'ru', 'us', 'tu', 'ar'],
-  shirtSize: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-  shoeSize: ['38', '39', '40', '41', '42', '43', '44', '45', '46', '47']
+  firstName: ['Anna', 'Johann', 'Emilia', 'Michael', 'Sophie', 'Lukas', 'Lea', 'Jakob', 'Hannah', 'David', 'Isabella', 'Leon', 'Mia', 'Benjamin', 'Julia', 'Maximilian', 'Laura', 'Fabian', 'Sarah', 'Paul', 'Marie', 'Simon', 'Laura', 'Felix'],
+  lastName: ['Schmidt', 'Müller', 'Schneider', 'Fischer', 'Weber', 'Meyer', 'Wagner', 'Becker', 'Schulz', 'Hoffmann', 'Koch', 'Bauer', 'Richter', 'Klein', 'Hahn', 'Wolf', 'Schwarz', 'Neumann', 'Zimmermann', 'Braun', 'Krüger', 'Krause', 'Kühn', 'Fuchs', 'Roth', 'Lang', 'Kraus', 'Kaiser', 'Bergmann', 'Böhm', 'Lorenz', 'Schuster', 'Seidel', 'Ludwig'],
+  language: ['en', 'de', 'pl', 'ru'],
+  shirtSize: ['xs', 'xs', 's', 'm', 'l', 'xl', 'xxl'],
+  shoeSize: ['38', '39', '40', '41', '42', '43', '44', '45'] 
 };
