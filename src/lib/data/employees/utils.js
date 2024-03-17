@@ -5,9 +5,9 @@ function generateRandomDate() {
   const currentYear = currentDate.getFullYear();
   const minYear = 1990;
   const year = Math.floor(Math.random() * (currentYear - minYear + 1)) + (currentYear - (currentYear - minYear));
-  const maxMonth = currentDate.getMonth() + 1; // Get current month (0-indexed)
+  const maxMonth = currentDate.getMonth() + 1; 
   const month = String(Math.floor(Math.random() * maxMonth) + 1).padStart(2, '0');
-  const maxDay = currentDate.getDate(); // Get current day of the month
+  const maxDay = currentDate.getDate(); 
   const day = String(Math.floor(Math.random() * maxDay) + 1).padStart(2, '0');
 
   return `${year}-${month}-${day}`;

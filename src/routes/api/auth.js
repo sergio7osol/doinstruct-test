@@ -10,14 +10,14 @@ export async function getAuthToken() {
 		if (!token) {
 			throw new Error('No token found. Get it first.');
 		}
-		 
+
 		return token;
 	} catch (error) {
 		const response = await fetch('/api/auth/sign-in', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-        'x-api-key': xApiKey
+				'x-api-key': xApiKey
 			},
 			body: JSON.stringify({ email, password })
 		});
@@ -26,9 +26,14 @@ export async function getAuthToken() {
 			throw new Error('Failed to get a token.');
 		}
 
-		const { token, expiresIn } = await response.json(); 
+		const { token, expiresIn } = await response.json();
 
 		localStorage.setItem('token', token);
 		localStorage.setItem('expiresIn', expiresIn);
-	}  
+	}
+}
+
+export async function clearToken() {
+	localStorage.removeItem('token');
+	localStorage.removeItem('expiresIn');
 }

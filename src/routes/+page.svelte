@@ -1,20 +1,13 @@
 <script>
 	import { email, password } from '/src/routes/api/authData';
-	import { getAuthToken } from '/src/routes/api/auth';
-	import { getEmployeesData } from '/src/routes/api/employees';
+	import { getAuthToken, clearToken } from '/src/routes/api/auth';
+	import { getEmployeeData } from '/src/routes/api/employees';
 	// import welcome from '$lib/images/svelte-welcome.webp';
 
 	let employeeCount = 350;
 
-	let authToken = '';
-
-	async function handleLogin() {
-    authToken = await getAuthToken(email, password);
-		console.log('typef authToken: ', typeof authToken);
-  }
-
   async function createEmployees() {
-    const res = await getEmployeesData(authToken);
+    const res = await getEmployeeData();
 		console.log('res: ', res);
   }
 </script>
@@ -35,8 +28,8 @@
 	</h1>
 
 	<main>
-		<button on:click={handleLogin}>get Auth Token</button>
 		<h1>Employees</h1>
+		<button on:click={clearToken}>Clear local storage</button>
 		<form on:submit={createEmployees}>
 			<label for="employeeCount">Number of Employees:</label>
 			<input id="employeeCount" bind:value={employeeCount} min="50" type="number" />
