@@ -9,11 +9,20 @@
 	--color-bg-2: hsl(224, 44%, 95%);
 	--color-theme-1: #ff3e00;
 	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+
+	
+	--text-color-primary: #C3C8C2;
+	--text-color-title: #141E12;
+	--text-color-default: #6B716A;
+	--bg-color-primary-button: #30A46C;
+	--text-color-primary-button: #FBFEFC;
+	--border-color-default: #E0E4E0;
+	--border-color-form-control: #C3C8C2;
+
 	font-family: var(--font-body);
-	color: var(--color-text);
+	color: var(--text-color-primary);
 }
 
 body {
