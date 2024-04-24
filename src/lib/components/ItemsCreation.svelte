@@ -16,14 +16,9 @@
 		<input id="employeeCount" class="creation__label-field" bind:value={count} min="3" type="number" />
 	</label>
 	<button class="creation__submit-button">Mitarbeiter anlegen</button>
-  <!-- <button on:click={showEmployees}>All employees</button> -->
 </form>
 
 <style>
-	* {
-		color: var(--text-color-default);
-	}
-
 	.creation {
 		display: flex;
 		align-items: flex-end;
