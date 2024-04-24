@@ -1,50 +1,33 @@
 <script>
-	import { email, password } from '/src/routes/api/authData';
-	import { getAuthToken, clearToken } from '/src/routes/api/auth';
-	import { getEmployeeData } from '/src/routes/api/employees';
-	// import welcome from '$lib/images/svelte-welcome.webp';
-
-	let employeeCount = 350;
-
-  async function createEmployees() {
-    const res = await getEmployeeData();
-		console.log('res: ', res);
-  }
+	import { signOut } from '/src/routes/api/auth';
+	import Card from '$lib/components/Card.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Mitarbeiter</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<!-- <source srcset={welcome} type="image/webp" /> -->
-				<!-- <img src={welcome_fallback} alt="Welcome" /> -->
-			</picture>
-		</span>
-	</h1>
-
 	<main>
-		<h1>Employees</h1>
-		<button on:click={clearToken}>Clear local storage</button>
-		<form on:submit={createEmployees}>
-			<label for="employeeCount">Number of Employees:</label>
-			<input id="employeeCount" bind:value={employeeCount} min="50" type="number" />
-			<button>Create Employees</button>
-		</form>
-		<br />
-		<!-- {#await promise}
-			<p>...waiting</p>
-		{:then number}
-			<p>The number is {number}</p>
-		{:catch error}
-			<p style="color: red">{error.message}</p>
-		{/await} -->
+		<button class="button--light" on:click={signOut}>Sign out</button>
+		<Card />
 	</main>
 </section>
 
 <style>
+		.button--light {
+			padding: .5rem .375rem;
+			background-color: #f8f9fa;
+			cursor: pointer;
+			border: 1px solid #dee2e6;
+			border-radius: .375rem;
+			box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15),0 1px 1px rgba(0, 0, 0, .075);
+			transition: color .8s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+			margin-bottom: 1rem;
+		}
+
+		.button--light:hover {
+			background-color: #d3d4d5;
+		}
 </style>
